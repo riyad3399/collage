@@ -180,7 +180,7 @@ const NavbarMenuList = () => {
           </Link>
           <ul
             tabIndex={0}
-            className="dropdown-content z-[1] menu menu-lg shadow bg-red-700 w-52"
+            className="dropdown-content z-[0] menu menu-lg shadow bg-red-700 w-52"
           >
             {item.dropdownItems &&
               item.dropdownItems.map((dropdown, i) => (
