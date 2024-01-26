@@ -1,0 +1,62 @@
+[
+  {
+    "name": "John Doe",
+    "title": "Software Engineer",
+    "education": "Bachelor's in Computer Science",
+    "image": "https://ecloudbd.com/uploads/CDA/staff_image/xl/210001.jpg?v=20240118014629"
+  },
+  {
+    "name": "Jane Smith",
+    "title": "UX Designer",
+    "education": "Master's in Interaction Design",
+    "image": "https://ecloudbd.com/uploads/CDA/staff_image/xl/210004.jpg?v=20220626051032"
+  },
+  {
+    "name": "Robert Johnson",
+    "title": "Data Analyst",
+    "education": "Bachelor's in Statistics",
+    "image": "https://ecloudbd.com/uploads/CDA/staff_image/xl/210007.jpg?v=20210706084953"
+  },
+  {
+    "name": "Emily Davis",
+    "title": "Marketing Specialist",
+    "education": "Bachelor's in Marketing",
+    "image": "https://ecloudbd.com/uploads/CDA/staff_image/xl/210011.jpg?v=20181028213544"
+  },
+  {
+    "name": "Michael Brown",
+    "title": "Financial Analyst",
+    "education": "Master's in Finance",
+    "image": "https://cdagsc.edu.bd/uploads/avatar.jpg?v=20190731090435"
+  },
+  {
+    "name": "Amanda White",
+    "title": "HR Manager",
+    "education": "Bachelor's in Human Resources",
+    "image": "https://cdagsc.edu.bd/uploads/avatar.jpg?v=20190731090435"
+  },
+  {
+    "name": "Christopher Lee",
+    "title": "Product Manager",
+    "education": "Master's in Business Administration",
+    "image": "https://cdagsc.edu.bd/uploads/avatar.jpg?v=20190731090435"
+  },
+  {
+    "name": "Sophia Taylor",
+    "title": "Graphic Designer",
+    "education": "Bachelor's in Graphic Design",
+    "image": "https://cdagsc.edu.bd/uploads/avatar.jpg?v=20190731090435"
+  },
+  {
+    "name": "Daniel Hernandez",
+    "title": "Systems Analyst",
+    "education": "Bachelor's in Information Systems",
+    "image": "https://cdagsc.edu.bd/uploads/avatar.jpg?v=20190731090435"
+  },
+  {
+    "name": "Olivia Robinson",
+    "title": "Customer Support Specialist",
+    "education": "Bachelor's in Communication",
+    "image": "https://cdagsc.edu.bd/uploads/avatar.jpg?v=20190731090435"
+  }
+]

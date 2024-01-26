@@ -15,18 +15,13 @@ const Navbar = () => {
               Login <MdLogin />
             </button>
           </div>
-          <nav className="bg-red-700">
-            <div className="flex items-center gap-5">
-              <img
-                className="h-32 w-32"
-                src="./college-logo.png"
-                alt="college logo"
-              />
-              <div className="text-center text-white font-semibold ">
-                <h2 className="text-7xl ">Example School & College</h2>
-                <h4 className="text-4xl p-2">Estd: 2000</h4>
-              </div>
-            </div>
+          <nav>
+            <img
+              className="w-full"
+              src="https://cdagsc.edu.bd/images/top_banner.gif?p=31"
+              alt="college logo"
+            />
+
             <div>
               <NavbarMenuList />
             </div>

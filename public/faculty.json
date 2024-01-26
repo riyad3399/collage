@@ -1,0 +1,62 @@
+[
+  {
+    "image": "https://ecloudbd.com/uploads/CDA/teacher_image/xl/110001.jpg?p=2022-02-23-22-00-33",
+    "name": "Faculty1",
+    "title": "Professor",
+    "education": "Ph.D. in Computer Science"
+  },
+  {
+    "image": "https://ecloudbd.com/uploads/CDA/teacher_image/xl/110003.jpg?p=2022-01-08-11-18-57",
+    "name": "Faculty2",
+    "title": "Associate Professor",
+    "education": "M.Sc. in Chemistry"
+  },
+  {
+    "image": "https://ecloudbd.com/uploads/CDA/teacher_image/xl/110004.jpg?p=2023-08-26-10-07-43",
+    "name": "Faculty3",
+    "title": "Assistant Professor",
+    "education": "B.A. in Literature"
+  },
+  {
+    "image": "https://ecloudbd.com/uploads/CDA/teacher_image/xl/110005.jpg?p=2022-01-08-11-23-14",
+    "name": "Faculty4",
+    "title": "Lecturer",
+    "education": "M.B.A. in Finance"
+  },
+  {
+    "image": "https://ecloudbd.com/uploads/CDA/teacher_image/xl/110006.jpg?p=2022-01-08-11-25-24",
+    "name": "Faculty5",
+    "title": "Senior Lecturer",
+    "education": "Ph.D. in Psychology"
+  },
+  {
+    "image": "https://ecloudbd.com/uploads/CDA/teacher_image/xl/110012.jpg?p=2023-06-14-00-04-41",
+    "name": "Faculty6",
+    "title": "Associate Professor",
+    "education": "M.Ed. in Education"
+  },
+  {
+    "image": "https://ecloudbd.com/uploads/CDA/teacher_image/xl/110013.jpg?p=2022-09-13-15-18-26",
+    "name": "Faculty7",
+    "title": "Professor",
+    "education": "Ph.D. in Physics"
+  },
+  {
+    "image": "https://ecloudbd.com/uploads/CDA/teacher_image/xl/110015.jpg?p=2022-01-08-12-19-14",
+    "name": "Faculty8",
+    "title": "Assistant Professor",
+    "education": "M.Sc. in Mathematics"
+  },
+  {
+    "image": "https://ecloudbd.com/uploads/CDA/teacher_image/xl/110016.jpg?p=2022-01-08-12-21-13",
+    "name": "Faculty9",
+    "title": "Lecturer",
+    "education": "B.A. in History"
+  },
+  {
+    "image": "https://ecloudbd.com/uploads/CDA/teacher_image/xl/110017.jpg?p=2022-01-08-12-23-09",
+    "name": "Faculty10",
+    "title": "Senior Lecturer",
+    "education": "M.A. in Sociology"
+  }
+]

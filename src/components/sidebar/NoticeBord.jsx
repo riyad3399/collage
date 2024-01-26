@@ -3,7 +3,7 @@ const NoticeBord = () => {
   console.log(notice);
 
   return (
-    <div className="border border-red-500 p-5 h-96 bg-white">
+    <div className=" p-5 h-96 bg-white">
       <h3 className="text-lg font-bold text-blue-500 ">নোটিশ বোর্ড</h3>
       <hr className="border border-red-500 my-3" />
       <div>

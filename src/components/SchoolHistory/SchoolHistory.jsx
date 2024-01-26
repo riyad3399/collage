@@ -1,5 +1,5 @@
 import ReadMore from "../ReadMore";
-import { schoolHistoryText } from "../../AllText/schoolHistoryText";
+import { schoolHistoryText } from "../../AllText/allText";
 
 const SchoolHistory = () => {
   return (

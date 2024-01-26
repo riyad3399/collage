@@ -1,40 +1,46 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/effect-fade";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 
-import { Navigation, Pagination, EffectCreative } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 const Banner = () => {
   return (
-    <div className="">
+    <>
       <Swiper
         spaceBetween={30}
-        effect={"creative"}
-        navigation={true}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         pagination={{
           clickable: true,
         }}
-        modules={[EffectCreative, Navigation, Pagination]}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
       >
         <SwiperSlide>
           <img
-            className="object-cover w-full h-96"
-            src="https://swiperjs.com/demos/images/nature-1.jpg"
-            loading="lazy"
+            src="https://ecloudbd.com/uploads/CDA/slider/lg/20231031075655.jpg"
+            alt="banner"
+            className="object-cover"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            className="object-cover w-full h-96"
-            src="https://swiperjs.com/demos/images/nature-1.jpg"
-            loading="lazy"
+            src="https://ecloudbd.com/uploads/CDA/slider/lg/20210812171828.jpg"
+            alt="banner"
+            className="object-cover"
           />
         </SwiperSlide>
       </Swiper>
-    </div>
+    </>
   );
 };
 
 export default Banner;
+

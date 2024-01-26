@@ -8,7 +8,7 @@ const ReadMore = ({ text }) => {
   };
 
   return (
-    <p>
+    <p className="text-justify">
       {isReadMore ? text.slice(0, 498) : text}
       <span onClick={toggleReadMore} className="text-green-600">
         {isReadMore ? "read more..." : "show less"}
