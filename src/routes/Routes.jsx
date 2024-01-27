@@ -9,6 +9,10 @@ import ChairmanMessage from "../pages/Administration/ChairmanMessage";
 import HeadTeacherMessage from "../pages/Administration/HeadTeacherMessage";
 import FacultyInformation from "../pages/Administration/FacultyInformation";
 import EmployeeInformation from "../pages/Administration/EmployeeInformation";
+import Notice from "../pages/Academic/Notice";
+import PressRelease from "../pages/TenderNotice/PressRelease";
+import LiveClass from "../pages/ELearning/liveClass/LiveClass";
+import VideoClass from "../pages/ELearning/videoClass/VideoClass";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +23,7 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
+      // প্রতিষ্ঠানের তথ্য
       {
         path: "history-of-the-institution",
         element: <HistoryOfTheInstitution />,
@@ -31,6 +36,7 @@ const router = createBrowserRouter([
         path: "location-map",
         element: <LocationMap />,
       },
+      // প্রশাসন
       {
         path: "chairman-Message",
         element: <ChairmanMessage />,
@@ -47,11 +53,31 @@ const router = createBrowserRouter([
         path: "employee-information",
         element: <EmployeeInformation />,
       },
+      // একাডেমিক
+      {
+        path: "notice",
+        element: <Notice />,
+      },
+
+      //
+      {
+        path: "press-release",
+        element: <PressRelease />,
+      },
     ],
   },
   {
     path: "/login",
     element: <LoginPage />,
+  },
+  // ই-লার্নিং
+  {
+    path: "live-class",
+    element: <LiveClass />,
+  },
+  {
+    path: "video-class",
+    element: <VideoClass />,
   },
 ]);
 
