@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
 import Home from "../pages/Home/Home/Home";
-import LoginPage from "../pages/Login/LoginPage";
 import HistoryOfTheInstitution from "../pages/OrganizationInformation/HistoryOfTheInstitution";
 import AimsAndObjectives from "../pages/OrganizationInformation/AimsAndObjectives";
 import LocationMap from "../pages/OrganizationInformation/LocationMap";
@@ -13,6 +12,8 @@ import Notice from "../pages/Academic/Notice";
 import PressRelease from "../pages/TenderNotice/PressRelease";
 import LiveClass from "../pages/ELearning/liveClass/LiveClass";
 import VideoClass from "../pages/ELearning/videoClass/VideoClass";
+import SignIn from "../pages/Authentication/SignIn/SignIn";
+import SignUp from "../pages/Authentication/SignUp/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -66,10 +67,7 @@ const router = createBrowserRouter([
       },
     ],
   },
-  {
-    path: "/login",
-    element: <LoginPage />,
-  },
+
   // ই-লার্নিং
   {
     path: "live-class",
@@ -79,6 +77,15 @@ const router = createBrowserRouter([
     path: "video-class",
     element: <VideoClass />,
   },
+  // Authentication
+  {
+    path: "/signin",
+    element: <SignIn />,
+  },
+  {
+    path: "signup",
+    element: <SignUp/>
+  }
 ]);
 
 export default router;
