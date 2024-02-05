@@ -14,6 +14,8 @@ import LiveClass from "../pages/ELearning/liveClass/LiveClass";
 import VideoClass from "../pages/ELearning/videoClass/VideoClass";
 import SignIn from "../pages/Authentication/SignIn/SignIn";
 import SignUp from "../pages/Authentication/SignUp/SignUp";
+import Dashboard from "../layout/Dashboard";
+import AddStudentInformation from "../components/Dashboard/Student/AddStudentInformation";
 
 const router = createBrowserRouter([
   {
@@ -79,12 +81,22 @@ const router = createBrowserRouter([
   },
   // Authentication
   {
-    path: "/signin",
+    path: "signin",
     element: <SignIn />,
   },
   {
     path: "signup",
     element: <SignUp/>
+  },
+  {
+    path: "dashboardHome",
+    element: <Dashboard />,
+    children: [
+      {
+        path: "add-student-info",
+        element: <AddStudentInformation/>
+      }
+    ]
   }
 ]);
 

@@ -66,7 +66,6 @@ const SignUp = () => {
 
                       updateUserProfile(photo, name)
                         .then(() => {
-                          console.log("User profile updated successfully.");
 
                           fetch(`http://localhost:5000/users/${email}`, {
                             method: "PUT",
@@ -95,7 +94,6 @@ const SignUp = () => {
                             });
                         })
                         .catch((err) => {
-                          console.log(err.message);
                           toast.error(err.message);
                         });
                     }
@@ -103,12 +101,10 @@ const SignUp = () => {
                 }, 1000); // Check every second for email verification
               })
               .catch((err) => {
-                console.error("Error sending email verification:", err.message);
                 toast.error(err.message);
               });
           })
           .catch((err) => {
-            console.log(err.message);
             toast.error(err.message);
           });
       });
@@ -133,8 +129,8 @@ const SignUp = () => {
           type="text"
           {...register("name", { required: "name is required" })}
         />
-        {errors.username && (
-          <span className="text-red-500">{errors.username.message}</span>
+        {errors.name && (
+          <span className="text-red-500">{errors.name.message}</span>
         )}
 
         <label

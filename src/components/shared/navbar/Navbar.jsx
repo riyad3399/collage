@@ -27,12 +27,18 @@ const Navbar = () => {
             </span>
             {user ? (
               <div className="flex gap-2 items-center">
+                <Link to="/dashboardHome" className="cursor-pointer">
+                  Dashboard
+                </Link>
                 <img
                   className="object-fill h-10 w-10 rounded-full border-2 border-blue-300"
                   src={user.photoURL}
                   alt="user"
                 />
-                <button onClick={handleLogout} className="flex items-center gap-2 btn btn-sm">
+                <button
+                  onClick={handleLogout}
+                  className="flex items-center gap-2 btn btn-sm"
+                >
                   Sign out <FaSignOutAlt size={22} />
                 </button>
               </div>
