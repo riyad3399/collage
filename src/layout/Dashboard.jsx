@@ -34,7 +34,7 @@ const Dashboard = () => {
             <Link to="add-student-info">Add Student Info</Link>
           </li>
           <li>
-            <a>Sidebar Item 2</a>
+            <Link to='showAllStudents'>All Students</Link>
           </li>
         </ul>
       </div>

@@ -16,6 +16,7 @@ import SignIn from "../pages/Authentication/SignIn/SignIn";
 import SignUp from "../pages/Authentication/SignUp/SignUp";
 import Dashboard from "../layout/Dashboard";
 import AddStudentInformation from "../components/Dashboard/Student/AddStudentInformation";
+import ShowAllStudents from "../components/Dashboard/Student/ShowAllStudents";
 
 const router = createBrowserRouter([
   {
@@ -95,6 +96,10 @@ const router = createBrowserRouter([
       {
         path: "add-student-info",
         element: <AddStudentInformation/>
+      },
+      {
+        path: "showAllStudents",
+        element: <ShowAllStudents/>
       }
     ]
   }

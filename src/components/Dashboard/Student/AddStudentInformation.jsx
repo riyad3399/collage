@@ -1,12 +1,22 @@
-import { Button, Input, Option, Select } from "@material-tailwind/react";
+import {
+  Button,
+  Input,
+  Option,
+  Select,
+  Textarea,
+} from "@material-tailwind/react";
 import SectionTitle from "../../shared/SectionTitle/SectionTitle";
 import { useForm, Controller } from "react-hook-form";
 import { FaCamera } from "react-icons/fa";
 import Container from "../../shared/Container";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
+import { useState } from "react";
 
 const AddStudentInformation = () => {
+  const [getClass, setGetClass] = useState("0");
+  console.log("class value =>", getClass);
+
   const {
     register,
     handleSubmit,
@@ -14,9 +24,9 @@ const AddStudentInformation = () => {
     reset,
     formState: { errors },
   } = useForm();
+  console.log("error => ", errors);
 
   const onSubmit = (data) => {
-
     const image = data.image[0];
 
     const url = `https://api.imgbb.com/1/upload?key=${
@@ -65,8 +75,6 @@ const AddStudentInformation = () => {
     console.log(data);
   };
 
-
-
   return (
     <div className="w-full">
       <SectionTitle
@@ -76,12 +84,17 @@ const AddStudentInformation = () => {
       <Container>
         <div>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="grid sm:grid-cols-2 md:grid-cols-3  gap-4 items-center justify-center justify-items-center">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3  gap-4 items-end justify-items-center">
               <label
                 title="Click to upload a photo"
                 className="w-full flex items-center justify-center px-4 py-6 bg-gray-300 rounded-md cursor-pointer "
               >
                 <FaCamera size={26} />
+                {errors.image && (
+                  <span className="text-red-500 ml-2">
+                    {errors.image.message}
+                  </span>
+                )}
                 <input
                   type="file"
                   className="hidden"
@@ -177,18 +190,11 @@ const AddStudentInformation = () => {
                 size="lg"
                 type="number"
                 placeholder="+88016*****"
-                label="Student Number"
+                label="Mobile Number"
                 {...register("studentNumber", { required: true })}
                 color="light-blue"
               />
-              <Input
-                size="lg"
-                type="text"
-                placeholder="Mirpur, Dhaka, Bangladesh"
-                label="Address"
-                {...register("address", { required: true })}
-                color="light-blue"
-              />
+
               <Input
                 size="lg"
                 type="email"
@@ -201,8 +207,8 @@ const AddStudentInformation = () => {
                 size="lg"
                 type="number"
                 placeholder="+88016*****"
-                label="Father's or Mother's Number"
-                {...register("studentNumber", { required: true })}
+                label="Guardian Mobile Number"
+                {...register("guardianNumber", { required: true })}
                 color="light-blue"
               />
               <Controller
@@ -216,16 +222,42 @@ const AddStudentInformation = () => {
                     size="lg"
                     label="Class"
                     {...field}
+                    onChange={(e) => {
+                      setGetClass(e); // Update state
+                      field.onChange(e); // Update form state
+                    }}
                   >
-                    <Option value="nine">9</Option>
-                    <Option value="ten">10</Option>
-                    <Option value="interFirstYear">Inter 1st Year</Option>
-                    <Option value="interSecondYear">Inter 2nd Year</Option>
+                    <Option value="8">8</Option>
+                    <Option value="9">9</Option>
+                    <Option value="10">10</Option>
+                    <Option value="Inter 1st Year">Inter 1st Year</Option>
+                    <Option value="Inter 2nd Year">Inter 2nd Year</Option>
                   </Select>
                 )}
               />
+
+              {getClass.length > 10 && (
+                <Controller
+                  name="department"
+                  control={control}
+                  render={({ field }) => (
+                    <Select
+                      variant="outlined"
+                      color="light-blue"
+                      size="lg"
+                      label="Department"
+                      {...field}
+                    >
+                      <Option value="Commerce">Commerce</Option>
+                      <Option value="Science">Science</Option>
+                      <Option value="Arts">Arts</Option>
+                    </Select>
+                  )}
+                />
+              )}
+
               <Controller
-                name="department"
+                name="religion"
                 control={control}
                 rules={{ required: true }}
                 render={({ field }) => (
@@ -233,12 +265,13 @@ const AddStudentInformation = () => {
                     variant="outlined"
                     color="light-blue"
                     size="lg"
-                    label="Department"
+                    label="Religion"
                     {...field}
                   >
-                    <Option value="commerce">Commerce</Option>
-                    <Option value="science">Science</Option>
-                    <Option value="arts">Arts</Option>
+                    <Option value="Islam">Islam</Option>
+                    <Option value="Christianity">Christianity</Option>
+                    <Option value="Hinduism">Hinduism</Option>
+                    <Option value="Buddhism">Buddhism</Option>
                   </Select>
                 )}
               />
@@ -250,8 +283,28 @@ const AddStudentInformation = () => {
                 color="light-blue"
               />
             </div>
+            <div className="flex gap-4 mt-4">
+              <Textarea
+                size="lg"
+                variant="outlined"
+                type="text"
+                label="Permanent Address"
+                {...register("permanentAddress", { required: true })}
+                color="light-blue"
+              />
+              <Textarea
+                size="lg"
+                variant="outlined"
+                type="text"
+                label="Present Address"
+                {...register("presentAddress", { required: true })}
+                color="light-blue"
+              />
+            </div>
 
-            <Button type="submit">Submit</Button>
+            <Button type="submit" className="mt-5">
+              Submit
+            </Button>
           </form>
         </div>
       </Container>
