@@ -17,6 +17,8 @@ import SignUp from "../pages/Authentication/SignUp/SignUp";
 import Dashboard from "../layout/Dashboard";
 import AddStudentInformation from "../components/Dashboard/Student/AddStudentInformation";
 import ShowAllStudents from "../components/Dashboard/Student/ShowAllStudents";
+import AddTeacherInformation from "../components/Dashboard/Faculty/AddTeacherInformation";
+import ShowAllTeachers from "../components/Dashboard/Faculty/ShowAllTeachers";
 
 const router = createBrowserRouter([
   {
@@ -94,12 +96,20 @@ const router = createBrowserRouter([
     element: <Dashboard />,
     children: [
       {
-        path: "add-student-info",
+        path: "addStudentInfo",
         element: <AddStudentInformation/>
       },
       {
         path: "showAllStudents",
         element: <ShowAllStudents/>
+      },
+      {
+        path: "addTeacherInfo",
+        element: <AddTeacherInformation/>
+      },
+      {
+        path: "showAllTeachers",
+        element: <ShowAllTeachers/>
       }
     ]
   }

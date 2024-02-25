@@ -31,10 +31,16 @@ const Dashboard = () => {
         ></label>
         <ul className="menu p-4 w-80 min-h-full bg-base-200  text-base-content ">
           <li>
-            <Link to="add-student-info">Add Student Info</Link>
+            <Link to="addStudentInfo">Add Student Info</Link>
           </li>
           <li>
-            <Link to='showAllStudents'>All Students</Link>
+            <Link to="showAllStudents">All Students</Link>
+          </li>
+          <li>
+            <Link to="addTeacherInfo">Add Teacher Info</Link>
+          </li>
+          <li>
+            <Link to="showAllTeachers">All Teachers</Link>
           </li>
         </ul>
       </div>
