@@ -1,6 +1,6 @@
 import { useState } from "react";
+import { ImSpinner } from "react-icons/im";
 import {
-  Button,
   Input,
   Option,
   Select,
@@ -13,7 +13,7 @@ import { FaCamera } from "react-icons/fa";
 import Swal from "sweetalert2";
 
 const AddTeacherInformation = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const {
     register,
@@ -36,7 +36,8 @@ const AddTeacherInformation = () => {
       .then((res) => res.json())
       .then((result) => {
         const photo = result.data.url;
-        const saveTeacherInfo = { ...data, image: photo };
+        const saveTeacherInfo = { ...data, image: photo, role: "teacher" };
+        setIsLoading(true);
         fetch(`http://localhost:5000/teacherInfo/${data.email}`, {
           method: "PUT",
           headers: {
@@ -46,6 +47,7 @@ const AddTeacherInformation = () => {
         })
           .then((res) => res.json())
           .then((data) => {
+            setIsLoading(false);
             if (!data.data.matchedCount > 0) {
               Swal.fire({
                 position: "center",
@@ -67,13 +69,13 @@ const AddTeacherInformation = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full ">
       <SectionTitle
         heading="Add Teacher"
         subHeading="Fill in the teacher information"
       />
       <Container>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)} className="py-4">
           <div className="grid sm:grid-cols-2 md:grid-cols-3  gap-4 items-end justify-items-center">
             <label
               title="Click to upload a photo"
@@ -245,9 +247,10 @@ const AddTeacherInformation = () => {
           </div>
 
           <div className="flex justify-end mt-4">
-            <Button color="blue" type="submit">
-              Add Teacher
-            </Button>
+            <button type="submit" className="btn btn-info">
+              Add Teacher{" "}
+              {isLoading && <ImSpinner size={22} className="animate-spin" />}
+            </button>
           </div>
         </form>
       </Container>

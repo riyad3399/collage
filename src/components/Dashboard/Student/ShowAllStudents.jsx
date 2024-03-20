@@ -4,11 +4,16 @@ import { Option, Select } from "@material-tailwind/react";
 
 const ShowAllStudents = () => {
   const [allStudent, setAllStudent] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     fetch(`http://localhost:5000/studentInfo`)
       .then((res) => res.json())
-      .then((data) => setAllStudent(data.data));
+      .then((data) => {
+        setAllStudent(data.data);
+        setIsLoading(false);
+      });
   }, []);
 
   return (
@@ -29,9 +34,13 @@ const ShowAllStudents = () => {
         </div>
       </div>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {allStudent.map((student) => (
-          <StudentCard key={student._id} data={student} />
-        ))}
+        {isLoading ? (
+          <span className="loading loading-spinner text-primary loading-lg"></span>
+        ) : (
+          allStudent.map((student) => (
+            <StudentCard key={student._id} data={student} />
+          ))
+        )}
       </div>
     </div>
   );

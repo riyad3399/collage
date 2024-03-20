@@ -4,12 +4,16 @@ import TeacherCard from "./TeacherCard";
 
 const ShowAllTeachers = () => {
   const [allTeachers, setAllTeachers] = useState([]);
-  console.log(allTeachers);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     fetch(`http://localhost:5000/teacherInfo`)
       .then((res) => res.json())
-      .then((data) => setAllTeachers(data.data))
+      .then((data) => {
+        setAllTeachers(data.data);
+        setIsLoading(false);
+      })
       .catch((err) => console.log(err));
   }, []);
 
@@ -31,9 +35,14 @@ const ShowAllTeachers = () => {
         </div>
       </div>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {allTeachers.map((teacher) => (
-          <TeacherCard key={teacher._id} data={teacher} />
-        ))}
+        {isLoading ? (
+          <span className="loading loading-spinner text-primary loading-lg"></span>
+        ) : (
+          allTeachers &&
+          allTeachers.map((teacher) => (
+            <TeacherCard key={teacher._id} data={teacher} />
+          ))
+        )}
       </div>
     </div>
   );

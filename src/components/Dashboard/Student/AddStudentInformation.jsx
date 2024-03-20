@@ -10,12 +10,12 @@ import { useForm, Controller } from "react-hook-form";
 import { FaCamera } from "react-icons/fa";
 import Container from "../../shared/Container";
 import Swal from "sweetalert2";
-import toast from "react-hot-toast";
+import { ImSpinner } from "react-icons/im";
 import { useState } from "react";
 
 const AddStudentInformation = () => {
   const [getClass, setGetClass] = useState("0");
-  console.log("class value =>", getClass);
+  const [isLoading, setIsLoading] = useState(false);
 
   const {
     register,
@@ -43,6 +43,7 @@ const AddStudentInformation = () => {
       .then((result) => {
         const photo = result.data.url;
         const saveStudentInfo = { ...data, image: photo };
+        setIsLoading(true);
         fetch(`http://localhost:5000/studentInfo/${data.email}`, {
           method: "PUT",
           headers: {
@@ -52,7 +53,7 @@ const AddStudentInformation = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            setIsLoading(false);
             if (!data.data.matchedCount > 0) {
               Swal.fire({
                 position: "center",
@@ -83,7 +84,7 @@ const AddStudentInformation = () => {
       />
       <Container>
         <div>
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form onSubmit={handleSubmit(onSubmit)} className="py-4">
             <div className="grid sm:grid-cols-2 md:grid-cols-3  gap-4 items-end justify-items-center">
               <label
                 title="Click to upload a photo"
@@ -302,9 +303,12 @@ const AddStudentInformation = () => {
               />
             </div>
 
-            <Button type="submit" className="mt-5">
-              Submit
-            </Button>
+            <div className="flex justify-end mt-4">
+              <button type="submit" className="btn btn-info">
+                Add Student{" "}
+                {isLoading && <ImSpinner size={22} className="animate-spin" />}
+              </button>
+            </div>
           </form>
         </div>
       </Container>
