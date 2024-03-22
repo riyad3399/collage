@@ -8,7 +8,7 @@ const ShowAllStudents = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(`http://localhost:5000/studentInfo`)
+    fetch(`https://college-server-six.vercel.app/studentInfo`)
       .then((res) => res.json())
       .then((data) => {
         setAllStudent(data.data);

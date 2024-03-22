@@ -1,11 +1,6 @@
 import { useState } from "react";
 import { ImSpinner } from "react-icons/im";
-import {
-  Input,
-  Option,
-  Select,
-  Textarea,
-} from "@material-tailwind/react";
+import { Input, Option, Select, Textarea } from "@material-tailwind/react";
 import SectionTitle from "../../shared/SectionTitle/SectionTitle";
 import Container from "../../shared/Container";
 import { useForm, Controller } from "react-hook-form";
@@ -38,13 +33,16 @@ const AddTeacherInformation = () => {
         const photo = result.data.url;
         const saveTeacherInfo = { ...data, image: photo, role: "teacher" };
         setIsLoading(true);
-        fetch(`http://localhost:5000/teacherInfo/${data.email}`, {
-          method: "PUT",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(saveTeacherInfo),
-        })
+        fetch(
+          `https://college-server-six.vercel.app/teacherInfo/${data.email}`,
+          {
+            method: "PUT",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(saveTeacherInfo),
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             setIsLoading(false);

@@ -7,7 +7,7 @@ const StudentCard = ({ data }) => {
 
   const openDialog = () => {
     setIsOpen(true);
-    fetch(`http://localhost:5000/studentInfo/${data.email}`)
+    fetch(`https://college-server-six.vercel.app/studentInfo/${data.email}`)
       .then((res) => res.json())
       .then((data) => {
         setShowDetailsData(data.data);

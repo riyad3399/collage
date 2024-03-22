@@ -44,13 +44,16 @@ const AddStudentInformation = () => {
         const photo = result.data.url;
         const saveStudentInfo = { ...data, image: photo };
         setIsLoading(true);
-        fetch(`http://localhost:5000/studentInfo/${data.email}`, {
-          method: "PUT",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(saveStudentInfo),
-        })
+        fetch(
+          `https://college-server-six.vercel.app/studentInfo/${data.email}`,
+          {
+            method: "PUT",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(saveStudentInfo),
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             setIsLoading(false);

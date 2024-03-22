@@ -9,7 +9,7 @@ const Dashboard = () => {
   const [allUsers, setAllUsers] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/users`)
+    fetch(`https://college-server-six.vercel.app/users`)
       .then((res) => res.json())
       .then((data) => {
         setAllUsers(data.data);

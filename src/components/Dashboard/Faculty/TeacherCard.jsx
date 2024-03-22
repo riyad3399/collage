@@ -7,7 +7,7 @@ const TeacherCard = ({ data }) => {
 
   const openDialog = () => {
     setIsOpen(true);
-    fetch(`http://localhost:5000/teacherInfo/${data.email}`)
+    fetch(`https://college-server-six.vercel.app/teacherInfo/${data.email}`)
       .then((res) => res.json())
       .then((data) => {
         setShowDetailsData(data.data);
@@ -44,10 +44,7 @@ const TeacherCard = ({ data }) => {
           </p>
         </div>
         <div className="card-actions justify-end">
-          <button
-            className="btn btn-link"
-            onClick={() => openDialog()}
-          >
+          <button className="btn btn-link" onClick={() => openDialog()}>
             Show Details
           </button>
 

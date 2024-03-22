@@ -66,14 +66,16 @@ const SignUp = () => {
 
                       updateUserProfile(photo, name)
                         .then(() => {
-
-                          fetch(`http://localhost:5000/users/${email}`, {
-                            method: "PUT",
-                            headers: {
-                              "content-type": "application/json",
-                            },
-                            body: JSON.stringify(saveUser),
-                          })
+                          fetch(
+                            `https://college-server-six.vercel.app/users/${email}`,
+                            {
+                              method: "PUT",
+                              headers: {
+                                "content-type": "application/json",
+                              },
+                              body: JSON.stringify(saveUser),
+                            }
+                          )
                             .then((res) => res.json())
                             .then((data) => {
                               console.log(data);
@@ -90,7 +92,7 @@ const SignUp = () => {
                                 "Error updating user in MongoDB:",
                                 err
                               );
-                              toast.error(err.message)
+                              toast.error(err.message);
                             });
                         })
                         .catch((err) => {
